@@ -32,7 +32,45 @@
 body {
     font-family: 'Nunito', sans-serif;
 }
-
+.hero-btn {
+    width: auto !important;
+    border: solid 1px #E2E4E6;
+}
+.hero-btn-group div {
+    min-width: 600px;
+}
+.hero-btn:focus {
+    background-color: #7E56DA !important;
+    color: white;
+}
+.msg-text {
+    resize: none;
+}
+.continue-btn {
+    position: relative;
+    bottom: 6rem;
+}
+// .rich-editor-toolbar {
+//     bottom: 4rem;
+//     left: 1rem;
+// }
+.rich-editor-imgs {
+    height: 36px;
+}
+// .rich-editor-switch {
+//     bottom: 3.5rem;
+//     left: 1rem;
+// }
+.rich-editor-assets {
+    bottom: 7rem;
+    left: 1rem;
+    width: calc(100% - 1.5rem);
+}
+#flexSwitchCheckDefault {
+    height: 1.3rem;
+    width: 2.5rem;
+    margin-bottom: 3px;
+}
 //---------------------------------------------
 // 3.Components
 //---------------------------------------------

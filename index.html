@@ -5,633 +5,222 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
     <meta http-equiv="x-ua-compatible" content="ie=edge"/>
     <title>Bootstrap 5 &amp; WebPack 5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 
 <body>
 <!-- NAVBAR -->
 
-<nav class="nav-main navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container py-2 px-4">
-        <a class="navbar-brand" href="#">
-            <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <rect y="0.5" width="22" height="25" fill="url(#pattern0)" />
-                <defs>
-                    <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                        <use xlink:href="#image0_1097_17746" transform="matrix(0.0172414 0 0 0.0151724 0 -0.000689655)" />
-                    </pattern>
-                    <image id="image0_1097_17746" width="58" height="66" xlink:href="data:image/png;base64,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" />
-                </defs>
-            </svg>
-        </a>
-        <div class="d-flex gap-3 align-items-center">
-            <svg class="d-inline-block d-sm-none" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="11.7664" cy="11.7669" r="8.98856" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                <path d="M18.0181 18.4854L21.5421 22.0002" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-            <button type="button" class="btn btn-light text-primary float-right d-inline-block d-sm-none">Make a report</button>
-            <button
-                class="navbar-toggler border-0"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#nav-main"
-                aria-controls="nav-main"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <nav class="nav-main navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container py-2 px-4">
+            <a class="navbar-brand" href="#">
+                <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <rect y="0.5" width="22" height="25" fill="url(#pattern0)" />
+                    <defs>
+                        <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                            <use xlink:href="#image0_1097_17746" transform="matrix(0.0172414 0 0 0.0151724 0 -0.000689655)" />
+                        </pattern>
+                        <image id="image0_1097_17746" width="58" height="66" xlink:href="data:image/png;base64,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" />
+                    </defs>
+                </svg>
+            </a>
+            <div class="d-flex gap-3 align-items-center">
+                <svg class="d-inline-block d-sm-none" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11.7664" cy="11.7669" r="8.98856" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M18.0181 18.4854L21.5421 22.0002" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <button type="button" class="btn btn-light text-primary float-right d-inline-block d-sm-none">Make a report</button>
+                <button
+                    class="navbar-toggler border-0"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#nav-main"
+                    aria-controls="nav-main"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="nav-main">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#why-report-it">Why report it?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#articles">Articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                </ul>
+                <form
+                    class="d-flex"
+                    action="index.html"
+                    method="GET"
+                >
+                    <div class="input-group">
+                        <input
+                            class="form-control"
+                            name="q"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                        />
+                        <button
+                            class="input-group-btn btn btn-light"
+                            type="submit"
+                        >
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="nav-main">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#why-report-it">Why report it?</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#articles">Articles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#faq">FAQ</a>
-                </li>
-            </ul>
-            <form
-                class="d-flex"
-                action="index.html"
-                method="GET"
-            >
-                <div class="input-group">
-                    <input
-                        class="form-control"
-                        name="q"
-                        type="search"
-                        placeholder="Search"
-                        aria-label="Search"
-                    />
-                    <button
-                        class="input-group-btn btn btn-light"
-                        type="submit"
-                    >
-                        Search
+        <!-- /container -->
+    </nav>
+
+    <div class="container d-inline-block bg-light">
+        <section id="jumbotron" class="mt-4">
+            <div class="rounded-top border-top border-5 border-primary w-25 ms-1"></div>
+            <div class="rounded bg-white pt-3">
+                <div class="ps-3">
+                    <h1 class="fs-large">Report a food safety issue Protect others!</h1>
+                    <div class="py-3">
+                        <p class="fs-small">I am reporting</p>
+                        <div class="w-100 overflow-auto hero-btn-group pb-3">
+                            <div class="d-flex overflow-auto gap-2">
+                                <button class="btn btn-light btn-md hero-btn" role="button">
+                                    Nausea
+                                </button>
+                                <button class="btn btn-light btn-md hero-btn" role="button">
+                                    Diarrhea
+                                </button>
+                                <button class="btn btn-light btn-md hero-btn" role="button">
+                                    Vomiting
+                                </button>
+                                <button class="btn btn-light btn-md hero-btn" role="button">
+                                    Something else
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="d-flex justify-content-between">
+                        <p class="fs-small sure-type" role="button">Got sick from</p>
+                        <p class="fs-small float-right pr-3 text-black-50 not-sure-type" role="button">I’m not sure</p>
+                    </div>
+                    <input type="text" class="form-control pac-target-input" id="location" placeholder="Where? e.g. Moe's Tavern">
+                    <input type="text" class="form-control pac-target-input2" id="location" placeholder="Type your city and state...">
+                    <div class="my-3">
+                        <textarea
+                            class="form-control msg-text"
+                            id="message"
+                            placeholder="What happened and when? Describe your situation"
+                            rows="7"
+                        ></textarea>
+                        <div class="position-relative rich-editor-assets pr-3">
+                            <div class="w-100">
+                                <div class="w-100 d-flex gap-2 rich-editor-imgs mb-1 overflow-auto"></div>
+                            </div>
+                            <div class="position-relative d-flex gap-3 rich-editor-toolbar mb-1">
+                                <a href="#" class="image-btn">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Iconly/Light/Image 3">
+                                            <g id="Image 2">
+                                                <path id="Stroke 1" fill-rule="evenodd" clip-rule="evenodd" d="M16.3025 2.75H7.65051C4.63851 2.75 2.74951 4.884 2.74951 7.904V16.05C2.74951 19.07 4.63051 21.204 7.65051 21.204H16.2975C19.3225 21.204 21.2025 19.07 21.2025 16.05V7.904C21.2065 4.884 19.3255 2.75 16.3025 2.75Z" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path id="Stroke 3" fill-rule="evenodd" clip-rule="evenodd" d="M10.7027 8.78545C10.7027 9.80545 9.87674 10.6315 8.85674 10.6315C7.83774 10.6315 7.01074 9.80545 7.01074 8.78545C7.01074 7.76545 7.83774 6.93945 8.85674 6.93945C9.87574 6.94045 10.7017 7.76645 10.7027 8.78545Z" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path id="Stroke 5" d="M21.207 14.951C20.284 14.001 18.509 12.082 16.579 12.082C14.648 12.082 13.535 16.315 11.678 16.315C9.821 16.315 8.134 14.401 6.646 15.628C5.158 16.854 3.75 19.361 3.75 19.361" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <input type="file" class="d-none" id="fileInput" />
+                                <a href="#">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Iconly/Light/Location">
+                                            <g id="Location">
+                                                <path id="Stroke 1" fill-rule="evenodd" clip-rule="evenodd" d="M14.5 10.5005C14.5 9.11924 13.3808 8 12.0005 8C10.6192 8 9.5 9.11924 9.5 10.5005C9.5 11.8808 10.6192 13 12.0005 13C13.3808 13 14.5 11.8808 14.5 10.5005Z" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path id="Stroke 3" fill-rule="evenodd" clip-rule="evenodd" d="M11.9995 21C10.801 21 4.5 15.8984 4.5 10.5633C4.5 6.38664 7.8571 3 11.9995 3C16.1419 3 19.5 6.38664 19.5 10.5633C19.5 15.8984 13.198 21 11.9995 21Z" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Iconly/Light/Video">
+                                            <g id="Video">
+                                                <path id="Stroke 1" fill-rule="evenodd" clip-rule="evenodd" d="M16.2966 15.5383C16.3775 17.3704 14.8989 18.9196 12.9944 18.9975C12.8541 19.0034 6.01507 18.9896 6.01507 18.9896C4.11972 19.1335 2.46091 17.7715 2.31141 15.9463C2.30014 15.8103 2.30322 8.47219 2.30322 8.47219C2.21925 6.63815 3.6958 5.08499 5.60139 5.00418C5.74372 4.99728 12.5735 5.01009 12.5735 5.01009C14.4781 4.86818 16.142 6.24001 16.2895 8.07405C16.2997 8.2061 16.2966 15.5383 16.2966 15.5383Z" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path id="Stroke 3" d="M16.2998 9.97984L19.5928 7.28484C20.4088 6.61684 21.6328 7.19884 21.6318 8.25184L21.6198 15.6008C21.6188 16.6538 20.3938 17.2308 19.5798 16.5628L16.2998 13.8678" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <a href="#">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g id="Iconly/Light/Voice">
+                                            <g id="Voice">
+                                                <path id="Stroke 1" d="M11.9999 21.9998V18.8389" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path id="Stroke 3" fill-rule="evenodd" clip-rule="evenodd" d="M11.9996 14.8481V14.8481C9.75637 14.8481 7.9375 13.0218 7.9375 10.7682V6.08095C7.9375 3.82732 9.75637 2 11.9996 2C14.2438 2 16.0617 3.82732 16.0617 6.08095V10.7682C16.0617 13.0218 14.2438 14.8481 11.9996 14.8481Z" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path id="Stroke 5" d="M20 10.8008C20 15.2396 16.4188 18.8385 11.9995 18.8385C7.58117 18.8385 4 15.2396 4 10.8008" stroke="#97989B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="position-relative d-flex gap-2 align-items-center form-check form-switch rich-editor-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                                <label class="form-check-label" for="flexSwitchCheckDefault">Make a private</label>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-md w-100 continue-btn" role="button">
+                        Continue
                     </button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </section>
+        <div class="mb-3">&nbsp;</div>
     </div>
     <!-- /container -->
-</nav>
+    <script>
+        $( function () {
+            $(".pac-target-input2").hide();
+            $(".sure-type").click(function () {
+                $(".pac-target-input2").hide();
+                $(".pac-target-input").show();
+                $(".not-sure-type").addClass("text-black-50");
+                $(".sure-type").removeClass("text-black-50");
+            });
+            $(".not-sure-type").click(function () {
+                $(".pac-target-input2").show();
+                $(".pac-target-input").hide();
+                $(".not-sure-type").removeClass("text-black-50");
+                $(".sure-type").addClass("text-black-50");
+            });
+            $(".image-btn").click(function () {
+                $("#fileInput").click();
+            });
+            $("#fileInput").change(function () {
+                previewImage();
+            });
 
-<div class="container d-inline-block bg-light">
- 
-    <!-- JUMBOTRON -->
-
-    <section id="jumbotron" class="mt-4">
-        <div class="rounded-top border-top border-5 border-primary w-25 ms-1"></div>
-        <div class="rounded bg-white p-3">
-            <h1 class="fs-large">Report a food safety issue Protect others!</h1>
-            <p>I am reporting</p>
-            <p>
-                <a
-                    class="btn btn-primary btn-lg"
-                    href="https://getbootstrap.com/docs/4.1/components/jumbotron/"
-                    role="button"
-                >
-                    Learn more
-                </a>
-            </p>
-        </div>
-    </section>
-
-    <!-- BLOCKQUOTE -->
-
-    <figure class="my-4">
-        <blockquote class="blockquote" id="blockquote">
-            <p>
-                Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more
-                time.
-            </p>
-        </blockquote>
-        <figcaption class="blockquote-footer pl-3">
-            <cite title="Source Title">Thomas Edison</cite>
-        </figcaption>
-    </figure>
-
-    <!-- IMAGE CARDS -->
-
-    <section id="photos" class="mt-4">
-        <h3>Photos</h3>
-
-        <div class="row album">
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="mb-3 mb-md-4">
-                    <img
-                        srcset="
-                            images/album/001-210x210.jpg 210w,
-                            images/album/001-255x255.jpg 255w,
-                            images/album/001-510x510.jpg 510w
-                         "
-                        src="images/album/001-510x510.jpg"
-                        alt="Nature: 1"
-                        class="img-thumbnail"
-                    />
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="mb-3 mb-md-4">
-                    <img
-                        srcset="
-                            images/album/002-210x210.jpg 210w,
-                            images/album/002-255x255.jpg 255w,
-                            images/album/002-510x510.jpg 510w
-                         "
-                        src="images/album/002-510x510.jpg"
-                        alt="Nature: 1"
-                        class="img-thumbnail"
-                    />
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="mb-3 mb-md-4">
-                    <img
-                        srcset="
-                            images/album/003-210x210.jpg 210w,
-                            images/album/003-255x255.jpg 255w,
-                            images/album/003-510x510.jpg 510w
-                         "
-                        src="images/album/003-510x510.jpg"
-                        alt="Nature: 1"
-                        class="img-thumbnail"
-                    />
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="mb-3 mb-md-4">
-                    <img
-                        srcset="
-                            images/album/004-210x210.jpg 210w,
-                            images/album/004-255x255.jpg 255w,
-                            images/album/004-510x510.jpg 510w
-                         "
-                        src="images/album/004-510x510.jpg"
-                        alt="Nature: 1"
-                        class="img-thumbnail"
-                    />
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="mb-3 mb-md-4">
-                    <img
-                        srcset="
-                            images/album/005-210x210.jpg 210w,
-                            images images/album/005-255x255.jpg 255w,
-                            images/album/005-510x510.jpg 510w
-                         "
-                        src="images/album/005-510x510.jpg"
-                        alt="Nature: 1"
-                        class="img-thumbnail"
-                    />
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="mb-3 mb-md-4">
-                    <img
-                        srcset="
-                            images/album/006-210x210.jpg 210w,
-                            images/album/006-255x255.jpg 255w,
-                            images/album/006-510x510.jpg 510w
-                         "
-                        src="images/album/006-510x510.jpg"
-                        alt="Nature: 1"
-                        class="img-thumbnail"
-                    />
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="mb-3 mb-md-4">
-                    <img
-                        srcset="
-                            images/album/007-210x210.jpg 210w,
-                            images/album/007-255x255.jpg 255w,
-                            images/album/007-510x510.jpg 510w
-                         "
-                        src="images/album/007-510x510.jpg"
-                        alt="Nature: 1"
-                        class="img-thumbnail"
-                    />
-                </div>
-            </div>
-
-            <div class="col-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="mb-3 mb-md-4">
-                    <img
-                        srcset="
-                           images/album/008-210x210.jpg 210w,
-                           images/album/008-255x255.jpg 255w,
-                           images/album/008-510x510.jpg 510w
-                         "
-                        src="images/album/008-510x510.jpg"
-                        alt="Nature: 1"
-                        class="img-thumbnail"
-                    />
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /photos -->
-
-    <!-- PROGRESS BARS -->
-
-    <section id="progress-bars">
-        <h3>Progress Bars</h3>
-
-        <div class="progress mb-3">
-            <div
-                class="progress-bar bg-success"
-                role="progressbar"
-                style="width: 25%"
-                aria-valuenow="25"
-                aria-valuemin="0"
-                aria-valuemax="100"
-            ></div>
-        </div>
-        <div class="progress mb-3">
-            <div
-                class="progress-bar bg-info"
-                role="progressbar"
-                style="width: 50%"
-                aria-valuenow="50"
-                aria-valuemin="0"
-                aria-valuemax="100"
-            ></div>
-        </div>
-        <div class="progress mb-3">
-            <div
-                class="progress-bar bg-warning"
-                role="progressbar"
-                style="width: 75%"
-                aria-valuenow="75"
-                aria-valuemin="0"
-                aria-valuemax="100"
-            ></div>
-        </div>
-        <div class="progress mb-3">
-            <div
-                class="progress-bar bg-danger"
-                role="progressbar"
-                style="width: 100%"
-                aria-valuenow="100"
-                aria-valuemin="0"
-                aria-valuemax="100"
-            ></div>
-        </div>
-    </section>
-
-    <!-- CONTACT FORM -->
-
-    <section id="contact-form" class="my-4">
-        <h3>Contact Form</h3>
-
-        <form
-            name="contactform"
-            action="mailto:spam@dominik-hanke.de"
-            method="post"
-        >
-            <div class="mb-3">
-                <label for="name">Name</label>
-                <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    placeholder="Your name"
-                />
-            </div>
-            <div class="mb-3">
-                <label for="email">Email address</label>
-                <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Your email"/>
-            </div>
-            <div class="mb-3">
-                <label for="message">Message</label>
-                <textarea
-                    class="form-control"
-                    id="message"
-                    rows="6"
-                ></textarea>
-            </div>
-            <button
-                type="submit"
-                class="btn btn-primary"
-            >
-                Send email
-            </button>
-        </form>
-    </section>
-
-    <section id="drop-up-split" class="my-4">
-        <h3>DropUp Split Button</h3>
-
-        <div class="btn-group dropup">
-            <button
-                type="button"
-                class="btn btn-outline-secondary"
-            >
-                Main Action
-            </button>
-            <button
-                type="button"
-                class="btn btn-secondary dropdown-toggle dropdown-toggle-split"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-            >
-                <span class="sr-only">Toggle Dropdown</span>
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
-            </div>
-        </div>
-    </section>
-
-    <section id="tab-panel" class="my-4">
-        <h3 class="mb-3">Tab Panel</h3>
-
-        <ul
-            class="nav nav-tabs"
-            id="myTab"
-            role="tablist"
-        >
-            <li class="nav-item">
-                <a
-                    class="nav-link active"
-                    id="home-tab"
-                    data-bs-toggle="tab"
-                    href="#home"
-                    role="tab"
-                    aria-controls="home"
-                    aria-selected="true"
-                >
-                    Home
-                </a>
-            </li>
-            <li class="nav-item">
-                <a
-                    class="nav-link"
-                    id="profile-tab"
-                    data-bs-toggle="tab"
-                    href="#projects"
-                    role="tab"
-                    aria-controls="projects"
-                    aria-selected="false"
-                >
-                    Projects
-                </a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div
-                class="tab-pane fade show active pt-3"
-                id="home"
-                role="tabpanel"
-                aria-labelledby="home-tab"
-            >
-                <p>This is a nice text about me...</p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                    massa.
-                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                </p>
-            </div>
-            <div
-                class="tab-pane fade pt-3"
-                id="projects"
-                role="tabpanel"
-                aria-labelledby="project-tab"
-            >
-                <p>These are my projects...</p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean
-                    massa.
-                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="dismissable-alerts" class="my-4">
-        <h3 class="mb-3">Dismissable Alerts</h3>
-
-        <div
-            class="alert alert-success alert-dismissible fade show"
-            role="alert"
-        >
-            <strong>Success!</strong> Your updates have been saved.
-            <button type="button"
-                    class="btn-close"
-                    data-bs-dismiss="alert"
-                    aria-label="Close"></button>
-        </div>
-
-        <div
-            class="alert alert-danger alert-dismissible fade show"
-            role="alert"
-        >
-            <strong>Error!</strong> Please fill in all fields.
-            <button type="button"
-                    class="btn-close"
-                    data-bs-dismiss="alert"
-                    aria-label="Close"></button>
-        </div>
-    </section>
-
-    <section id="tooltips" class="my-4">
-        <h3 class="mb-3">Tooltips</h3>
-
-        <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            title="Tooltip on top"
-        >
-            Tooltip on top
-        </button>
-        <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-toggle="tooltip"
-            data-bs-placement="right"
-            title="Tooltip on right"
-        >
-            Tooltip on right
-        </button>
-        <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-toggle="tooltip"
-            data-bs-placement="bottom"
-            title="Tooltip on bottom"
-        >
-            Tooltip on bottom
-        </button>
-        <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-toggle="tooltip"
-            data-bs-placement="left"
-            title="Tooltip on left"
-        >
-            Tooltip on left
-        </button>
-    </section>
-
-    <section id="popovers" class="my-4">
-        <h3 class="mb-3">Popover</h3>
-
-        <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-container="body"
-            data-bs-toggle="popover"
-            data-bs-placement="top"
-            data-bs-content="Top popover"
-        >
-            Popover on top
-        </button>
-        <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-container="body"
-            data-bs-toggle="popover"
-            data-bs-placement="right"
-            data-bs-content="Right popover"
-        >
-            Popover on right
-        </button>
-        <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-container="body"
-            data-bs-toggle="popover"
-            data-bs-placement="bottom"
-            data-bs-content="Bottom popover"
-        >
-            Popover on bottom
-        </button>
-        <button
-            type="button"
-            class="btn btn-secondary"
-            data-bs-container="body"
-            data-bs-toggle="popover"
-            data-bs-placement="left"
-            data-bs-content="Left popover"
-        >
-            Popover on left
-        </button>
-    </section>
-
-    <section id="toasts" class="my-4">
-        <h4 class="mb-3">Toasts</h4>
-
-        <p>
-            You can use links or buttons to trigger toasts, as this boilerplate includes a small JS script
-            to handle this for you.
-        </p>
-        <p>
-            To use a button add the attributes <code>data-bs-toggle</code> and <code>data-bs-target</code> to it.<br>
-            &lt;button class="btn btn-secondary" data-bs-toggle="toast" data-bs-target"#demoToastOne"&gt;...&lt;/button&gt;
-        </p>
-        <p>
-            To use a link add the attributes <code>data-bs-toggle</code> and <code>href</code> to it.<br>
-            &lt;a href="#demoToastOne" data-bs-toggle="toast"&gt;...&lt;/a&gt;
-        </p>
-
-        <button
-            type="button"
-            class="btn btn-secondary me-2"
-            data-bs-toggle="toast"
-            data-bs-target="#demoToastOne"
-        >
-            Show first toast
-        </button>
-
-        <a
-            data-bs-toggle="toast"
-            href="#demoToastTwo"
-        >
-            Show second toast
-        </a>
-    </section>
-
-    <div class="mb-5">&nbsp;</div>
-</div>
-<!-- /container -->
-
-<!-- Toasts -->
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 11">
-    <div class="toast-container position-static">
-
-        <!-- First toast -->
-        <div
-            id="demoToastOne"
-            class="toast text-bg-success"
-            role="alert"
-            aria-live="assertive"
-            aria-atomic="true"
-        >
-            <div class="toast-header">
-                <strong class="me-auto">Bootstrap</strong>
-                <small>just now</small>
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="toast"
-                    aria-label="Close"
-                ></button>
-            </div>
-            <div class="toast-body">
-                Hello, world! This is a toast message.
-            </div>
-        </div><!-- /toast -->
-
-        <!-- Second toast -->
-        <div
-            id="demoToastTwo"
-            class="toast text-bg-danger"
-            role="alert"
-            aria-live="assertive"
-            aria-atomic="true"
-        >
-            <div class="toast-header">
-                <strong class="me-auto">Bootstrap</strong>
-                <small>just now</small>
-                <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="toast"
-                    aria-label="Close"
-                ></button>
-            </div>
-            <div class="toast-body">
-                Hello, world! This is a toast message.
-            </div>
-        </div><!-- /toast -->
-
-    </div><!-- /toast-container -->
-</div>
-
+            function previewImage () {
+                var file = document.querySelector('#fileInput').files[0];
+                var reader = new FileReader();
+                reader.onloadend = function() {
+                    var preview = `<img class="img-thumbnail" id="preview" width=36 height=36 src="${ reader.result }">`;
+                    $(".rich-editor-imgs").append(preview);
+                }
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+            }
+        });
+    </script>
 </body>
 </html>

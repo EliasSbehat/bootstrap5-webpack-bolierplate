@@ -43,13 +43,15 @@
 ));
 */
 :root {
-  --font-size-small: 14px;
+  --font-size-small: 1rem;
   --font-size-medium: 16px;
   --font-size-large: 1.3rem;
 }
 
 .fs-small {
   font-size: var(--font-size-small);
+  line-height: 24px;
+  font-weight: 600;
 }
 
 .fs-medium {
