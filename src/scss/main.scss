@@ -22,8 +22,15 @@
 //---------------------------------------------
 // 2. Page Layout
 //---------------------------------------------
+@font-face {
+    font-family: 'Nunito';
+    src: url('../../fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body {
+    font-family: 'Nunito', sans-serif;
 }
 
 //---------------------------------------------

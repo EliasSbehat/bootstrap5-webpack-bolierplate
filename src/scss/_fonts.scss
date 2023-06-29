@@ -42,3 +42,22 @@
   ),
 ));
 */
+:root {
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 1.3rem;
+}
+
+.fs-small {
+  font-size: var(--font-size-small);
+}
+
+.fs-medium {
+  font-size: var(--font-size-medium);
+}
+
+.fs-large {
+  font-size: var(--font-size-large);
+  font-weight: 700;
+  line-height: 28px;
+}
